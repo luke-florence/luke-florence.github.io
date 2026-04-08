@@ -2,18 +2,24 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Luke",
+  lastName: "Florence",
+  name: `Luke Florence`,
+  role: (
+    <>
+      PhD Candidate in Biological Sciences (Forest Ecosystems)
+      <br />
+      Environmental Data Science & Spatial Data Analytics
+    </>
+  ),
+  avatar: "/images/avatar.png",
+  email: "L.Florence@latrobe.edu.au",
+  location: "Australia/Melbourne", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English — native/primary fluency", "Spanish — limited working proficiency"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -25,25 +31,19 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/LukeLikesDirt",
     essential: true,
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    name: "Google Scholar",
+    icon: "googleScholar",
+    link: "https://scholar.google.com.au/citations?user=S_OEPyQAAAAJ&hl=en&oi=sra",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "ORCID",
+    icon: "orcid",
+    link: "https://orcid.org/0000-0002-1901-7772",
     essential: true,
   },
   {
@@ -58,26 +58,26 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} — Environmental Data Science & Spatial Data Analytics`,
+  description: `Portfolio of ${person.name}, a PhD candidate applying environmental data science and spatial data analytics to environmental challenges in Australia.`,
+  headline: <>Environmental data science and spatial analytics for Australia's environmental challenges</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Environmental Niches in Forest Trees</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/environmental-niches-forest-trees",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Luke — a PhD candidate in biological sciences (forest ecosystems) at La Trobe University. I thrive on <Text as="span" weight="strong">synthesising messy, high-dimensional data into clear, fundamental insights and decision-relevant answers</Text>, using broad-scale spatial analytics, causal inference, and reproducible pipelines to map Australian biogeography and understand how ecosystems respond to environmental change. I work across R, Python, and HPC, and teach other researchers to do the same.
+    </>
   ),
 };
 
@@ -85,7 +85,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `About ${person.name} — ecological data scientist and PhD candidate working in environmental data science and spatial data analytics.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,7 +94,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,52 +102,83 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        <Text as="p" variant="body-default-l">
+          I'm an ecological data scientist and PhD candidate at La Trobe University, where my research applies large-scale spatial analytics, frequentist and Bayesian spatial modelling, and causal inference to questions about how Australia's forests are shaped by climate, soil, and evolutionary history. My work sits at the intersection of <strong>biogeography</strong>, <strong>statistical ecology</strong>, and <strong>reproducible computing</strong>.
+        </Text>
+        <Text as="p" variant="body-default-l">
+          I build pipelines that turn messy, high-dimensional datasets — DNA sequences, environmental rasters, species occurrences spanning hundreds of thousands of observations — into clear, fundamental insights and decision-relevant answers. I work across R, Python, and high-performance computing, and I care about open, version-controlled science that other researchers can reuse and extend. I'm currently looking for postdoctoral research positions and applied data-driven roles in government and research institutions where rigorous spatial and statistical analysis can inform environmental decision-making.
+        </Text>
+        <Text as="p" variant="body-default-l">
+          I use AI tools to accelerate my daily research workflow, and I'm interested in how agentic tools are changing how scientists write and review code and synthesise data.
+        </Text>
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Research & Teaching Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "La Trobe University",
+        timeframe: "2023 – present",
+        role: "PhD Researcher — Biological Sciences (Forest Ecosystems)",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Lead analyst on three first-author studies integrating regional to continent-scale spatial data with cutting-edge statistical models and clear communication to understand the ecology and biogeography of Australia's forests
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developed a novel taxonomically-informed DNA clustering method published in <em>Scientific Data</em> (Florence et al. 2025), releasing the pipeline and curated dataset as open resources on biodiversity data platform (GBIF and ALA)
+          </>,
+          <>
+            Lead analyst on an <em>Ecology Letters</em> manuscript (under review) applying MaxEnt species distribution models, Bayesian spatial models (INLA-SPDE), and phylogenetic inference at continental scale
+          </>,
+          <>
+            Manage terabyte-scale sequence data on HPC infrastructure with reproducible, version-controlled pipelines
+          </>,
+          <>
+            Also a co-author on peer-reviewed work spanning plant ecology, fungal ecology, fire ecology, and ecological restoration
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
+        company: "La Trobe University",
+        timeframe: "2024 – present",
+        role: "Teaching Assistant & Peer Learning Facilitator (Code Club)",
+achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed the R workshop curriculum for the third‑year undergraduate subject *Quantitative Research Methods*, including hands‑on tutorials on data exploration, visualisation, and introductory‑to‑intermediate statistical modelling
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Teach best-practices in environmental data science and reproducible R workflows to postgraduate and honours students; design and deliver hands-on workshops on version control, data wrangling, and statistical modelling
+          </>,
+          <>
+            Mentor students on analytical design in ecological thesis projects, translating complex statistical and bioinformatic concepts for non-specialist learners
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "NSW Department of Primary Industries — Wollongbar Institute",
+        timeframe: "2020 – 2021",
+        role: "Research Intern",
+        achievements: [
+          <>
+            Integrated analytical chemistry (LC-MS) with environmental and agricultural datasets to support a soil-health monitoring program used by NSW DPI scientists and decision-makers
+          </>,
+          <>
+            Prepared datasets and analytical outputs for internal stakeholders, gaining first-hand experience of the standards and expectations of delivering technical work inside a government science setting
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "La Trobe University & Southern Cross University",
+        timeframe: "2021 – 2022",
+        role: "Research Assistant",
+        achievements: [
+          <>
+            Supported high-throughput DNA sequencing, bioinformatics, and field-based environmental sampling projects across two research groups
           </>,
         ],
         images: [],
@@ -156,15 +187,23 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "PhD, Biological Sciences (Forest Ecosystems) — La Trobe University",
+        description: <>2023 – submitting mid-2026</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "BSc (Honours), Microbiology — La Trobe University",
+        description: (
+          <>2022 · First Class Honours · Top of cohort, with a Commendation for Academic Excellence</>
+        ),
+      },
+      {
+        name: "Bachelor of Environmental Science — Southern Cross University",
+        description: (
+          <>2019 – 2021 · GPA 6.83 / 7.00 · Multiple Academic Excellence Awards</>
+        ),
       },
     ],
   },
@@ -173,60 +212,44 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Spatial & statistical modelling",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Continent-scale spatial analysis, frequentist and Bayesian spatial models (INLA-SPDE), species distribution modelling (MaxEnt), GLMs / GLMMs, causal inference with observational data, phylogenetic inference, and uncertainty quantification.
+          </>
         ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Bioinformatics & DNA metabarcoding",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            End-to-end design and execution of DNA metabarcoding pipelines — from raw sequence to ecological inference — including quality control, denoising, taxonomic clustering, curated reference-database construction, and reproducible HPC workflows for terabyte-scale sequence data. Published a novel taxonomically-informed clustering method in <em>Scientific Data</em> (2025).
+          </>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Coding & reproducibility",
+        description: (
+          <>
+            Advanced R, working Python, UNIX/Shell, Git/GitHub, and Markdown. SLURM-scheduled high-performance computing, parallel pipelines, and end-to-end reproducible, version-controlled workflows.
+          </>
+        ),
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Communication & teaching",
+        description: (
+          <>
+            Peer-reviewed publication and international conference presentation; technical teaching of R, version control, and statistical modelling; plain-English writing for non-specialist audiences. Facilitator of the <strong>La Trobe Code Club</strong>, a student-led community for reproducible ecology and data science.
+          </>
+        ),
+        tags: [],
+        images: [],
       },
     ],
   },

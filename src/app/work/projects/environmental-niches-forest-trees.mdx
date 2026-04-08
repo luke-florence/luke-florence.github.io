@@ -1,0 +1,46 @@
+---
+title: "Uncovering environmental niches in Australian forest trees"
+publishedAt: "2026-04-08"
+summary: "Continent-scale analyses reveal how mycorrhizal strategy shapes where Australian trees can live — and how exploiting multiple strategies can expand the environmental niches of forest trees."
+images:
+  - "/images/projects/environmental-niches/cover.png"
+team:
+  - name: "Luke Florence"
+    role: "Lead analyst"
+    avatar: "/images/avatar.png"
+    linkedIn: ""
+link: "https://github.com/LukeLikesDirt/MycorrhizaAusForests"
+---
+
+## Overview
+
+Mycorrhizas are partnerships between plant roots and soil fungi — the hidden networks that help trees take up water and nutrients in exchange for carbon. Different trees run with different fungal partners, and the two most common strategies in forest trees, **arbuscular mycorrhizal (AM)** and **ectomycorrhizal (EcM)**, play distinct ecological roles. A tree's "choice" of fungal partner therefore leaves a geographic fingerprint. This project asks **can a tree's mycorrhizal strategy shape where it can live?**
+
+Australia's forests are a global anomaly. The continent hosts roughly **60% of the world's dual-mycorrhizal tree species** (species that can form partnerships with both AM and EcM fungi), **38% of its non-mycorrhizal trees** (species with no mycorrhizal partner at all), and **25% of its ectomycorrhizal trees** — but only **3% of its arbuscular mycorrhizal species**, the dominant strategy covering roughly 90% of tree species on Earth. This continent-scale study leverages Australia's unique biodiversity as a natural experiment no other landmass can run, uncovering the environmental niches of dual-mycorrhizal and non-mycorrhizal trees.
+
+**Scale:** 2,334 native forest tree species across 17,764 grid cells at 10 × 10 km resolution, spanning the Australian continent.
+
+## Approach
+
+My analysis stack combines four methods, each answering a question the others can't:
+
+- **MaxEnt species distribution models** → where each species can occur, built from presence records and continent-scale environmental predictors
+- **INLA-SPDE Bayesian spatial random fields** → how niche breadth varies across strategies while controlling for spatial autocorrelation and uneven sampling
+- **Phylogenetic inference** → how much of the signal is evolutionary inheritance versus ecology
+- **Mid-domain null modelling** → whether latitudinal niche patterns are a real ecological signal or a geometric artefact of the continent's shape
+
+All pipelines are version-controlled and reproducible end-to-end.
+
+## Key findings
+
+- **Dual-mycorrhizal trees hold the broadest environmental niches** of any strategy — 29 to 45 percent broader than AM, EcM, and non-mycorrhizal trees on average — likely because they can exploit both AM and EcM partnerships and hedge against environmental change.
+- **Dual-mycorrhizal trees act as geographic intermediaries.** They extend into mid-latitudes that bridge AM-dominated tropical forests with EcM-dominated temperate forests, linking the two dominant strategies across Australia's latitudinal gradient.
+- **Dual trees mirror EcM trees in *environmental space*, not *geographic space*** —contrary to our initial hypothesis. They occupy similar environmental niche envelopes to EcM species but span a wider geographic range, suggesting evolutionary convergence in habitat preferences despite different biogeographic patterns.
+- **Latitudinal niche patterns don't follow the classic Northern Hemisphere Rapoport rule**, which predicts that species at higher latitudes should tolerate broader environmental conditions because repeated Quaternary glacial cycles eliminated narrow‑ranged taxa and enabled recolonisation by a limited set of cold‑tolerant lineages. Instead, Australian trees exhibit a pronounced mid‑domain peak in niche breadth — a Southern Hemisphere biogeographic signature consistent with the continent’s milder glacial history and long‑term climatic stability as the dominant evolutionary driver.
+
+Mycorrhizal type is often treated as a botanical footnote. These results show it's a first-order predictor of where a tree can live and how much environmental variation it can tolerate — information that feeds directly into environmental-change vulnerability assessments, restoration planning, and conservation strategies. The methods also transfer cleanly to any continent-scale question that mixes messy biological data with spatial, environmental, and evolutionary signal.
+
+## Status
+
+Manuscript under review at *Ecology Letters* (2025).  
+Code and analysis pipeline: [github.com/LukeLikesDirt/MycorrhizaAusForests](https://github.com/LukeLikesDirt/MycorrhizaAusForests).

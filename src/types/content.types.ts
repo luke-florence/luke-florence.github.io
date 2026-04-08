@@ -17,8 +17,8 @@ export type Person = {
   lastName: string;
   /** The name you want to display, allows variations like nicknames */
   name: string;
-  /** Role or job title */
-  role: string;
+  /** Role or job title — ReactNode so the line can break across multiple visual lines */
+  role: React.ReactNode;
   /** Path to avatar image */
   avatar: string;
   /** Email address */

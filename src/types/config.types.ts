@@ -139,13 +139,10 @@ export type SchemaConfig = {
 };
 
 /**
- * Social links for organization.
+ * Social / profile links used for schema.org JSON-LD `sameAs`.
+ * Any key is allowed; only the URL strings are consumed.
  */
-export type SameAsConfig = {
-  threads: string;
-  linkedin: string;
-  discord: string;
-};
+export type SameAsConfig = Record<string, string>;
 
 /**
  * Social sharing configuration for blog posts.
