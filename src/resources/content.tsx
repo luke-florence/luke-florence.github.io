@@ -14,7 +14,7 @@ const person: Person = {
   ),
   avatar: "/images/avatar.png",
   email: "L.Florence@latrobe.edu.au",
-  location: "Melbourne|Australia", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Australia/Melbourne", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English — native/primary fluency", "Spanish — limited working proficiency"], // optional: Leave the array empty if you don't want to display languages
 };
 
