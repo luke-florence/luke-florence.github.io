@@ -196,13 +196,13 @@ achievements: [
       {
         name: "BSc (Honours), Microbiology — La Trobe University",
         description: (
-          <>2022 · First Class Honours · Top of cohort, with a Commendation for Academic Excellence</>
+          <>2022<br />First Class Honours<br />Top of cohort, with a Commendation for Academic Excellence</>
         ),
       },
       {
         name: "Bachelor of Environmental Science — Southern Cross University",
         description: (
-          <>2019 – 2021 · GPA 6.83 / 7.00 · Multiple Academic Excellence Awards</>
+          <>2019 – 2021<br />GPA 6.83 / 7.00<br />Multiple Academic Excellence Awards</>
         ),
       },
     ],

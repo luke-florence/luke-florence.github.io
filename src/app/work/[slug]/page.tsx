@@ -119,7 +119,14 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <Column fillWidth gap="8">
+          <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+          {post.metadata.imageCredit && (
+            <Text variant="body-default-xs" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+              {post.metadata.imageCredit}
+            </Text>
+          )}
+        </Column>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
