@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  imageCredit?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  imageCredit,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -39,6 +41,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           alt: title,
         }))}
       />
+      {imageCredit && (
+        <Text
+          variant="body-default-xs"
+          onBackground="neutral-weak"
+          paddingX="s"
+          style={{ fontStyle: "italic" }}
+        >
+          {imageCredit}
+        </Text>
+      )}
       <Flex
         s={{ direction: "column" }}
         fillWidth

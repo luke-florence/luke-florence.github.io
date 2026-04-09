@@ -14,7 +14,7 @@ const person: Person = {
   ),
   avatar: "/images/avatar.png",
   email: "L.Florence@latrobe.edu.au",
-  location: "Australia/Melbourne", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Melbourne|Australia", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English — native/primary fluency", "Spanish — limited working proficiency"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -147,7 +147,7 @@ const about: About = {
         role: "Teaching Assistant & Peer Learning Facilitator (Code Club)",
 achievements: [
           <>
-            Developed the R workshop curriculum for the third‑year undergraduate subject *Quantitative Research Methods*, including hands‑on tutorials on data exploration, visualisation, and introductory‑to‑intermediate statistical modelling
+            Developed the R workshop curriculum for the third‑year undergraduate subject <em>Quantitative Research Methods</em>, including hands‑on tutorials on data exploration, visualisation, and introductory‑to‑intermediate statistical modelling
           </>,
           <>
             Teach best-practices in environmental data science and reproducible R workflows to postgraduate and honours students; design and deliver hands-on workshops on version control, data wrangling, and statistical modelling
@@ -266,9 +266,9 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Research",
+  title: `Research Projects – ${person.name}`,
+  description: `Research projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
