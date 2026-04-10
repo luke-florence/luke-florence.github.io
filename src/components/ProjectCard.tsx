@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  linkLabel?: string;
   manuscript?: string;
   imageCredit?: string;
 }
@@ -31,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  linkLabel,
   manuscript,
   imageCredit,
 }) => {
@@ -101,7 +103,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={link}
                 >
-                  <Text variant="body-default-s">View project repository</Text>
+                  <Text variant="body-default-s">{linkLabel || "View project repository"}</Text>
                 </SmartLink>
               )}
             </Column>
