@@ -131,13 +131,24 @@ export default async function Project({
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
-        </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
-      </Column>
+      {post.metadata.relatedProjects === undefined && (
+        <Column fillWidth gap="40" horizontal="center" marginTop="40">
+          <Line maxWidth="40" />
+          <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
+            Related projects
+          </Heading>
+          <Projects exclude={[post.slug]} range={[2]} />
+        </Column>
+      )}
+      {post.metadata.relatedProjects && post.metadata.relatedProjects.length > 0 && (
+        <Column fillWidth gap="40" horizontal="center" marginTop="40">
+          <Line maxWidth="40" />
+          <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
+            Related projects
+          </Heading>
+          <Projects include={post.metadata.relatedProjects} />
+        </Column>
+      )}
       <ScrollToHash />
     </Column>
   );

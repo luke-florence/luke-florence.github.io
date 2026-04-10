@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  manuscript?: string;
   imageCredit?: string;
 }
 
@@ -30,6 +31,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  manuscript,
   imageCredit,
 }) => {
   return (
@@ -71,7 +73,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
               <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
+                <span dangerouslySetInnerHTML={{ __html: description.replace(/\*([^*]+)\*/g, '<em>$1</em>') }} />
               </Text>
             )}
             <Flex gap="24" wrap>
@@ -81,7 +83,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">Read plain-language summary</Text>
+                </SmartLink>
+              )}
+              {manuscript && (
+                <SmartLink
+                  suffixIcon="arrowUpRightFromSquare"
+                  style={{ margin: "0", width: "fit-content" }}
+                  href={manuscript}
+                >
+                  <Text variant="body-default-s">View manuscript</Text>
                 </SmartLink>
               )}
               {link && (
@@ -90,7 +101,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={link}
                 >
-                  <Text variant="body-default-s">View project</Text>
+                  <Text variant="body-default-s">View project repository</Text>
                 </SmartLink>
               )}
             </Flex>

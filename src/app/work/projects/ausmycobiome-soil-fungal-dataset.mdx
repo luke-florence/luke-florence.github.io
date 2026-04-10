@@ -9,19 +9,21 @@ team:
     avatar: "/images/avatar.png"
     linkedIn: ""
 link: "https://github.com/LukeLikesDirt/AusMycobiome"
+manuscript: "https://doi.org/10.1038/s41597-025-04598-5"
+relatedProjects: []
 ---
 
 ## Overview
 
-Soil fungi drive nutrient cycling, plant productivity, and ecosystem stability, yet they are almost invisible in the biodiversity datasets that underpin conservation planning. The Australian Microbiome Initiative had generated an extraordinary continent-scale ITS metabarcoding dataset — more than 2,000 topsoil plots across Australia, Christmas Island, and Antarctica — but the raw data carried enough methodological baggage that downstream records on biodiversity platforms had begun to mislead the field. Exotic *Amanita* species were being assigned to Australian soils. More than a thousand ectomycorrhizal records had appeared in Antarctica, a continent with no ectomycorrhizal host plants. Inflated diversity estimates were feeding into global meta-analyses.
+Soil fungi drive nutrient cycling, plant productivity, and ecosystem stability, yet they are almost invisible in the biodiversity datasets that underpin conservation planning. The Australian Microbiome Initiative had generated an extraordinary continent-scale ITS metabarcoding dataset — more than 2,000 topsoil plots across Australia, Christmas Island, and Antarctica — but the raw data carried enough methodological baggage that downstream records on biodiversity platforms had begun to mislead the field.
 
 **AusMycobiome** is a ground-up reanalysis of the entire dataset, built on best-practice standards in fungal metabarcoding and released as a curated, ready-to-use resource for biodiversity, biogeography, and conservation research.
 
 ## Scale
 
 - **2,104 unique samples**
-- **8 ecoregions**, from the warm-and-wet tropical forests for far north Queensland to the cold-and-dry Antarctic tundra
-- **31,926 fungal OTUs** clustered from 132.6 million quality-filtered sequences
+- **8 ecoregions** - from the warm-and-wet tropical forests for far north Queensland to the cold-and-dry Antarctic tundra
+- **31,926 fungal OTUs** covering some 132 million quality-filtered sequences
 - **Over 120 environmental predictor variables** — climate, soil physicochemistry, vegetation, habitat condition, and geography — pre-joined to every sample to fast-track downstream modelling
 
 ## What we fixed
@@ -30,9 +32,9 @@ The original dataset had propagated three problems into biodiversity platforms:
 
 - **Inflated diversity**, driven by poor-quality single-end ITS reads being processed with routine pipelines
 - **Index-switching artefacts** that manifest as ghost detections of taxa in samples where they don't belong — including the high prevelance and abundance of ectomycorrhizal records in Antarctica
-- **Lenient taxonomic assignments** that linked native Australian fungi to northern hemisphere species names
+- **Lenient taxonomic assignments** that incorrectly linked native Australian fungi to northern hemisphere species names
 
-We built a conservative, reproducible pipeline using **DNAbarcoder** for taxon-specific similarity cut-offs, **DADA2** denoising, and a novel taxonomically-informed clustering approach that replaces one-size-fits-all sequence thresholds with dynamic taxon-speicfic cluster threshld based on phylogenetic and taxanomic information. The pipeline was benchmarked against three published studies that had flagged the original dataset's weaknesses, and validated by reproducing a continental species-distribution modelling study for orchid mycorrhizal fungi.
+We built a conservative, reproducible pipeline using [DNAbarcoder](https://github.com/vuthuyduong/dnabarcoder)  to apply taxon‑specific similarity cut‑offs, and developed a taxonomically informed clustering method that replaces one‑size‑fits‑all thresholds with dynamic, lineage‑specific cut‑offs derived from phylogenetic and taxonomic information. The pipeline was benchmarked against three published studies that had flagged the original dataset's weaknesses, and validated by reproducing a continental species-distribution modelling study for orchid mycorrhizal fungi.
 
 ## Open science
 
@@ -53,7 +55,7 @@ The methods also transfer. The same taxonomically-informed clustering, conservat
 
 ## Status
 
-Published in *Scientific Data* (2025) — Florence et al., *A curated soil fungal dataset to advance fungal ecology and conservation research in Australia and Antarctica*, Sci Data 12:353. [doi.org/10.1038/s41597-025-04598-5](https://doi.org/10.1038/s41597-025-04598-5)
+Published in *Scientific Data* (2025) — Florence et al. *A curated soil fungal dataset to advance fungal ecology and conservation research in Australia and Antarctica*, Sci Data 12:353. [doi.org/10.1038/s41597-025-04598-5](https://doi.org/10.1038/s41597-025-04598-5)
 
 Code and pipeline: [github.com/LukeLikesDirt/AusMycobiome](https://github.com/LukeLikesDirt/AusMycobiome)
 
