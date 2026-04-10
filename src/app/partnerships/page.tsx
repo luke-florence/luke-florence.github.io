@@ -12,7 +12,7 @@ export async function generateMetadata() {
   });
 }
 
-const CATEGORY_ORDER = ["Research funding", "Collaborators", "Supervisors"] as const;
+const CATEGORY_ORDER = ["Research funders", "Collaborators", "Supervisors"] as const;
 
 export default function Partnerships() {
   const allPartners = getPosts(["src", "app", "partnerships", "posts"]);
@@ -80,7 +80,7 @@ export default function Partnerships() {
                         {partner.metadata.subtitle}
                       </Text>
                     )}
-                    <Text variant="body-default-s" onBackground="neutral-weak">
+                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ whiteSpace: "pre-line" }}>
                       {partner.metadata.summary}
                     </Text>
                     {partner.metadata.link && (

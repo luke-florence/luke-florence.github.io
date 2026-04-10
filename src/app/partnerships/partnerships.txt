@@ -1,0 +1,24 @@
+Research funding
+Society for the Protection of Underground Networks (SPUN; https://www.spun.earth/), the Victorian Environmental Assessment Council (VEAC; https://www.veac.vic.gov.au/; via the Bill Borthwick Student Scholarship; https://www.veac.vic.gov.au/about-us/student-scholarships) and the Australian Wildlife Society (AWS; https://www.aws.org.au/) all supported my third PhD chapter on 
+
+SPUN, I can't say enough good things about this organisation. Their advocacy, media, research, and the support they provide to global south researchers is honourable and inspiring. Their mission and research inspires my research and drive my imagination for what's possible. I am ever grateful for their supporting my research and hope that I can forge new partnerships and work with them in the future. They supported the sequencing of arbuscular mycorrhizal fungi in the third research chapter of my PhD.
+
+AWS is an amazing organisation which can you please make some nice thing up to say. They supported my field work and lab consumables for the third chapter of my PhD.
+
+VEAC, I think I can keep this one short and sweet. And they contributed towards soil physicochemical analyses in the third research chapter of my PhD.
+
+For a quick overview of my third chapter, which is still under way, you can read my spun application at "magic-portfolio/src/app/partnerships/spun_application.pdf". But note that this is now focusing on soil nitrogen in particular and I am applying a causal model framework to uncover the direct causal effects of soil nitrogen on mycorrhizal fungal diversity in Australian temperate forests.
+
+Collaborators
+
+Australian Microbiome Initiative (https://www.australianmicrobiome.com/) is an amazing project spans some 2,200 soil sites. Is a fabulous initiative that has really bolstered microbial research in Australia. I was fortunate enough to leverage attire data for the second research chapter of my PhD (AusMycobiome), and they also kindly supplied me with soil and DNA to supplement the sites from my fieldwork from the third research chapter of my PhD.
+
+The Global Soil Mycobiome consortium (GSMc; https://gsmc-fungi.github.io/) and Leho Tedersoo is an amazing initiative. I first met Leo during my undergraduate, where he kindly guided me with the fungal sequencing that I used for thew Tea Tree project. I there after contributed to the Global Soil Mycobiome and have since contributed over 130 samples, putting Australia on there global map. I will continue to contribute to GSM and hope that with their help we can map fungi across Australia using cutting edge techniques.
+
+Supervisors
+
+Dr John Morgan (https://scholars.latrobe.edu.au/jwmorgan) is my Principal Supervisor for my PhD. John passion for ecology has been a motivation supercharger during my PhD. Full of energy, bright ideas, and passion for ecology, our conversations have fuelled my own passion for science and his guidance and wise words have helped me navigate the numerous challenges that arise during the course of my PhD. Thanks for your support and guidance John.
+
+Dr Camille Truong (https://www.rbg.vic.gov.au/science/science-staff/camille-truong/) is my Co-Supervisor for my PhD. Camille and I both share a passion for fungi. Camille has encouraged me to engage with the mycology and mycorrhizal community throughout my PhD, attending and helping organise events like the International conference on mycorrhizal, and to participate in programs like the SPUN Science Associates (https://www.spun.earth/associates). Camille also gave me the big push I needed to take up GitHub and a path to reproducible research, and has pushed me t break new boundaries in fly fungal bioinformatics work. I have cherished Camille's helping hand and occasional shove I needed to break though into new levels of understanding.
+
+Dr Jen Wood (https://scholars.latrobe.edu.au/j5wood) was my Principal Supervisor during my Honours and is my Co-Supervisor for my PhD. Jen has been a kind and supporting supervisor, with admirable values and a kind heart. Jen has been a light in my journey when times felt dark, someone I could be myself around, be vulnerable and heard, and listen when need help. This is all a bit mushy and I need help to make my write up on Jen read as though she has given me power and was the launching pad of may research career.
