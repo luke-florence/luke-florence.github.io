@@ -9,7 +9,7 @@ interface ProjectsProps {
 }
 
 export function Projects({ range, exclude, include }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+  let allProjects = getPosts(["src", "app", "research", "projects"]);
 
   // Include only specific slugs when provided
   if (include && include.length > 0) {
