@@ -76,7 +76,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span dangerouslySetInnerHTML={{ __html: description.replace(/\*([^*]+)\*/g, '<em>$1</em>') }} />
               </Text>
             )}
-            <Flex gap="24" wrap>
+            <Column gap="8">
               {content?.trim() && (
                 <SmartLink
                   suffixIcon="arrowRight"
@@ -104,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   <Text variant="body-default-s">View project repository</Text>
                 </SmartLink>
               )}
-            </Flex>
+            </Column>
           </Column>
         )}
       </Flex>
