@@ -1,4 +1,4 @@
-import { Column, Flex, Heading, Media, Meta, Row, Schema, SmartLink, Text } from "@once-ui-system/core";
+import { Column, Flex, Heading, Meta, Row, Schema, SmartLink, Text } from "@once-ui-system/core";
 import { baseURL, about, person, partnerships } from "@/resources";
 import { getPosts } from "@/utils/utils";
 
@@ -63,13 +63,11 @@ export default function Partnerships() {
                   vertical="start"
                 >
                   {partner.metadata.image && (
-                    <Flex style={{ minWidth: "180px", maxWidth: "200px", width: "200px" }} s={{ maxWidth: "100%" }}>
-                      <Media
+                    <Flex style={{ minWidth: "180px", maxWidth: "200px", width: "200px", flexShrink: 0 }} s={{ maxWidth: "100%" }}>
+                      <img
                         src={partner.metadata.image}
                         alt={partner.metadata.title}
-                        aspectRatio="1 / 1"
-                        radius="m"
-                        sizes="200px"
+                        style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "var(--radius-m)" }}
                       />
                     </Flex>
                   )}
