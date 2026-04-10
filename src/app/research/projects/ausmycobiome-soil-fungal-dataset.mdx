@@ -1,0 +1,64 @@
+---
+title: "AusMycobiome - a curated soil fungal dataset for Australia and Antarctica"
+publishedAt: "2025-02-27"
+summary: "An open-source, well-curated soil fungal dataset for Australia and Antarctica, covering 2,104 samples, 31,926 fungal OTUs, and over 120 environmental predictors — engineered to fast-track fungal biodiversity and conservation research in the Southern Hemisphere."
+images:
+  - "/images/projects/ausmycobiome-soil-fungal-dataset/Panus_lecomtei.png"
+team:
+  - name: "Luke Florence"
+    role: "Lead author"
+    avatar: "/images/avatar.png"
+    linkedIn: ""
+link: "https://github.com/LukeLikesDirt/AusMycobiome"
+manuscript: "https://doi.org/10.1038/s41597-025-04598-5"
+imageCredit: "Image: Panus lecomtei by Steve Axford"
+relatedProjects: []
+---
+
+## Overview
+
+Soil fungi drive nutrient cycling, plant productivity, and ecosystem stability, yet they are almost invisible in the biodiversity datasets that underpin conservation planning. The Australian Microbiome Initiative had generated an extraordinary continent-scale ITS metabarcoding dataset — more than 2,000 topsoil plots across Australia, Christmas Island, and Antarctica — but the raw data carried enough methodological baggage that downstream records on biodiversity platforms had begun to mislead the field.
+
+**AusMycobiome** is a ground-up reanalysis of the entire dataset, built on best-practice standards in fungal metabarcoding and released as a curated, ready-to-use resource for biodiversity, biogeography, and conservation research.
+
+## Scale
+
+- **2,104 unique samples**
+- **8 ecoregions** - from the warm-and-wet tropical forests for far north Queensland to the cold-and-dry Antarctic tundra
+- **31,926 fungal OTUs** covering some 132 million quality-filtered sequences
+- **Over 120 environmental predictor variables** — climate, soil physicochemistry, vegetation, habitat condition, and geography — pre-joined to every sample to fast-track downstream modelling
+
+## What we fixed
+
+The original dataset had propagated three problems into biodiversity platforms:
+
+- **Inflated diversity**, driven by poor-quality single-end ITS reads being processed with routine pipelines
+- **Index-switching artefacts** that manifest as ghost detections of taxa in samples where they don't belong — including the high prevelance and abundance of ectomycorrhizal records in Antarctica
+- **Lenient taxonomic assignments** that incorrectly linked native Australian fungi to northern hemisphere species names
+
+We built a conservative, reproducible pipeline using [DNAbarcoder](https://github.com/vuthuyduong/dnabarcoder)  to apply taxon‑specific similarity cut‑offs, and developed a taxonomically informed clustering method that replaces one‑size‑fits‑all thresholds with dynamic, lineage‑specific cut‑offs derived from phylogenetic and taxonomic information. The pipeline was benchmarked against three published studies that had flagged the original dataset's weaknesses, and validated by reproducing a continental species-distribution modelling study for orchid mycorrhizal fungi.
+
+## Open science
+
+Everything is open, version controlled, and designed for reuse:
+
+- Full bioinformatics pipeline on GitHub ([github.com/LukeLikesDirt/AusMycobiome](https://github.com/LukeLikesDirt/AusMycobiome))
+- Curated OTU matrices, reference sequences, taxonomy tables, and sample metadata on figshare ([doi.org/10.6084/m9.figshare.27938037](https://doi.org/10.6084/m9.figshare.27938037))
+- Ready-to-use without further bioinformatic expertise — researchers can go straight from download to analysis
+- The manuscript is open-access at [*Scientific Data* (Florence et al. 2025)](https://doi.org/10.1038/s41597-025-04598-5) if you would lie to find out about the nitty gritty details 
+
+We explicitly advocate for **replacing the historical Australian Microbiome dataset on the Atlas of Living Australia and GBIF with this curated version**, so that the millions of downstream queries those platforms serve draw on robust information rather than propagating known artefacts.
+
+## Conservation impact
+
+Fungi are a kingdom-scale blind spot in conservation. The tools we use for plants and animals — range maps, species-distribution models, vulnerability assessments, restoration-planning layers — simply don't exist for most fungi, because the underlying occurrence data hasn't been fit for purpose. AusMycobiome changes that for Australia and Antarctica. With robust occurrences, the dataset is ready to power biogeographic modelling, conservation prioritisation, and Southern-Hemisphere-specific ecological inference — the kind of work that global datasets built on Northern-Hemisphere paradigms consistently fail to deliver.
+
+The methods also transfer. The same taxonomically-informed clustering, conservative filtering, and DNAbarcoder-driven taxonomy can be applied to any large-scale metabarcoding dataset that needs to be safely integrated into a biodiversity platform.
+
+## Status
+
+Published in *Scientific Data* (2025) — Florence et al. *A curated soil fungal dataset to advance fungal ecology and conservation research in Australia and Antarctica*, Sci Data 12:353. [doi.org/10.1038/s41597-025-04598-5](https://doi.org/10.1038/s41597-025-04598-5)
+
+Code and pipeline: [github.com/LukeLikesDirt/AusMycobiome](https://github.com/LukeLikesDirt/AusMycobiome)
+
+---

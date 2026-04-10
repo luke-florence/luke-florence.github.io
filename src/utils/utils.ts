@@ -23,6 +23,8 @@ type Metadata = {
   linkLabel?: string;
   manuscript?: string;
   relatedProjects?: string[];
+  category?: string;
+  order?: number;
 };
 
 import { notFound } from "next/navigation";
@@ -57,6 +59,8 @@ function readMDXFile(filePath: string) {
     manuscript: data.manuscript || "",
     imageCredit: data.imageCredit || "",
     relatedProjects: data.relatedProjects,
+    category: data.category || "",
+    order: data.order ?? 99,
   };
 
   return { metadata, content };

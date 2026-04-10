@@ -72,7 +72,7 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/environmental-niches-forest-trees",
+    href: "/research/environmental-niches-forest-trees",
   },
   subline: (
     <>
@@ -265,12 +265,19 @@ const blog: Blog = {
 };
 
 const work: Work = {
-  path: "/work",
+  path: "/research",
   label: "Research",
   title: `Research Projects – ${person.name}`,
   description: `Research projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
+};
+
+const partnerships: Work = {
+  path: "/partnerships",
+  label: "Partnerships",
+  title: `Partnerships – ${person.name}`,
+  description: `Research funders, collaborators, and supervisors who have shaped the work of ${person.name}`,
 };
 
 const gallery: Gallery = {
@@ -324,4 +331,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, partnerships, gallery };

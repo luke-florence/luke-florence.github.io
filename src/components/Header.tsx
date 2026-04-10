@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person, about, blog, work, partnerships, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -109,21 +109,40 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/work"] && (
+              {routes["/research"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
+                      href="/research"
                       label={work.label}
-                      selected={pathname.startsWith("/work")}
+                      selected={pathname.startsWith("/research")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
+                      href="/research"
+                      selected={pathname.startsWith("/research")}
+                    />
+                  </Row>
+                </>
+              )}
+              {routes["/partnerships"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="handshake"
+                      href="/partnerships"
+                      label={partnerships.label}
+                      selected={pathname.startsWith("/partnerships")}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="handshake"
+                      href="/partnerships"
+                      selected={pathname.startsWith("/partnerships")}
                     />
                   </Row>
                 </>

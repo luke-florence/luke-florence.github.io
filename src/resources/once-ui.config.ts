@@ -19,7 +19,8 @@ const baseURL: string = "https://luke-florence.github.io";
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
-  "/work": true,
+  "/research": true,
+  "/partnerships": true,
   "/blog": false,
   "/gallery": false,
 };
