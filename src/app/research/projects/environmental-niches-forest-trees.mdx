@@ -17,35 +17,112 @@ relatedProjects:
 
 ## Overview
 
-Mycorrhizas are partnerships between plant roots and soil fungi — the hidden networks that help trees take up water and nutrients in exchange for carbon. Different trees run with different fungal partners, and the two most common strategies in forest trees, **arbuscular mycorrhizal (AM)** and **ectomycorrhizal (EcM)**, play distinct ecological roles. A tree's "choice" of fungal partner therefore leaves a geographic fingerprint. This project asks **can a tree's mycorrhizal strategy shape where it can live?**
+Most trees do not explore the soil alone. They rely on mycorrhizal fungi — belowground partners that help roots capture water and nutrients in exchange for carbon.
 
-Australia's forests are a global anomaly. The continent hosts roughly **60% of the world's dual-mycorrhizal tree species** (species that can form partnerships with both AM and EcM fungi), **38% of its non-mycorrhizal trees** (species with no mycorrhizal partner at all), and **25% of its ectomycorrhizal trees** — but only **3% of its arbuscular mycorrhizal species**, the dominant strategy covering roughly 90% of tree species on Earth. This continent-scale study leverages Australia's unique biodiversity as a natural experiment no other landmass can run, uncovering the environmental niches of dual-mycorrhizal and non-mycorrhizal trees.
+But not all partnerships work the same way. Globally, most forest trees use one of two dominant mycorrhizal strategies, and each comes with a unique ecological toolkit.
 
-**Scale:** 2,334 native forest tree species across 17,764 grid cells at 10 × 10 km resolution, spanning the Australian continent.
+**Arbuscular mycorrhizal (AM) fungi** are common in warm, wet tropical forests. **Ectomycorrhizal (EcM) fungi** are often linked to cooler, drier, or nutrient-limited forests.
 
-## Approach
+These differences matter. Because AM and EcM trees tend to occupy distinct environmental niches, their fungal partners provide different strategies for accessing nutrients and coping with environmental stress, such as drought and nutrient limitation.
 
-My analysis stack combines four methods, each answering a question the others can't:
+A smaller group of trees can form partnerships with **both AM and EcM fungi**. These are **dual-mycorrhizal trees**, and they may have an unusual advantage — ecological flexibility.
 
-- **MaxEnt species distribution models** → where each species can occur, built from presence records and continent-scale environmental predictors
-- **INLA-SPDE Bayesian spatial random fields** → how niche breadth varies across strategies while controlling for spatial autocorrelation and uneven sampling
-- **Phylogenetic inference** → how much of the signal is evolutionary inheritance versus ecology
-- **Mid-domain null modelling** → whether latitudinal niche patterns are a real ecological signal or a geometric artefact of the continent's shape
+This project asks two simple ecological questions at continental scale:
 
-All pipelines are version-controlled and reproducible end-to-end.
+- **Does a tree’s mycorrhizal strategy help determine where it lives?**
+- **Does the dual-mycorrhizal strategy allow trees to tolerate a broader range of environmental conditions?**
+
+Australia is an ideal place to ask these questions. Its forests contain an unusually high proportion of the world’s dual-mycorrhizal, EcM, and non-mycorrhizal tree species, but relatively few AM tree species compared with the global flora (Figure 1). That makes the continent a natural experiment in how plant–fungi strategies shape environmental niches.
+
+We analysed 2,334 native Australian forest tree species across 17,764 grid cells at 10 × 10 km resolution, spanning the wet tropical rainforests of the northeast to the relatively dry and nutrient-poor forests of the southwest.
+
+We found that mycorrhizal strategy is not a botanical footnote. It is a major clue to where trees occur, how much environmental variation they tolerate, and how Australian forests came to be organised across the continent.
+
+![Figure 1](/images/projects/environmental-niches/figure_1.png)
+
+**Figure 1.** Australia is globally unusual in its distribution of tree mycorrhizal strategies. (a) Phylogenetic placement of native Australian trees. (b) Taxonomic distribution of tree species among mycorrhizal types in Australia and globally. Native Australian trees contain a high proportion of the world’s dual-mycorrhizal, ectomycorrhizal, and non-mycorrhizal tree species, but relatively few arbuscular mycorrhizal tree species. This makes Australia an ideal system for testing how belowground fungal partnerships shape environmental niches.
+
+
+## Analytical approach
+
+We combined species distribution modelling, spatial statistics, phylogenetic correction, and null modelling to separate ecological signal from spatial, geometric, and evolutionary structure.
+
+- **MaxEnt species distribution models** → estimated where each species can occur and the range of environmental conditions they can tolerate
+
+- **INLA-SPDE Bayesian spatial random fields** → tested how the prevalence of each mycorrhizal strategy changed across Australia while accounting for spatial structure in the data
+
+- **Phylogenetic inference** → tested whether niche patterns remained after accounting for evolutionary relatedness among species
+
+- **Mid-domain null modelling** → tested whether latitudinal niche patterns reflected ecological signal or the geometry of the Australian continent
+
+All pipelines were version-controlled and reproducible end-to-end.
 
 ## Key findings
 
-- **Dual-mycorrhizal trees hold the broadest environmental niches** of any strategy — 29 to 45 percent broader than AM, EcM, and non-mycorrhizal trees on average — likely because they can exploit both AM and EcM partnerships and hedge against environmental change.
-- **Dual-mycorrhizal trees act as geographic intermediaries.** They extend into mid-latitudes that bridge AM-dominated tropical forests with EcM-dominated temperate forests, linking the two dominant strategies across Australia's latitudinal gradient.
-- **Dual trees mirror EcM trees in *environmental space*, not *geographic space*** —contrary to our initial hypothesis. They occupy similar environmental niche envelopes to EcM species but span a wider geographic range, suggesting evolutionary convergence in habitat preferences despite different biogeographic patterns.
-- **Latitudinal niche patterns don't follow the classic Northern Hemisphere Rapoport rule**, which predicts that species at higher latitudes should tolerate broader environmental conditions because repeated Quaternary glacial cycles eliminated narrow‑ranged taxa and enabled recolonisation by a limited set of cold‑tolerant lineages. Instead, Australian trees exhibit a pronounced mid‑domain peak in niche breadth — a Southern Hemisphere biogeographic signature consistent with the continent’s milder glacial history and long‑term climatic stability as the dominant evolutionary driver.
+### Dual-mycorrhizal trees had the broadest environmental niches
 
-Mycorrhizal type is often treated as a botanical footnote. These results show it's a first-order predictor of where a tree can live and how much environmental variation it can tolerate — information that feeds directly into environmental-change vulnerability assessments, restoration planning, and conservation strategies. The methods also transfer cleanly to any continent-scale question that mixes messy biological data with spatial, environmental, and evolutionary signal.
+Dual-mycorrhizal trees capable of forming both AM and EcM partnerships occupied the widest range of environmental conditions (Figure 2).
+
+Their niche breadth was **29–45% greater** than that of AM, EcM, and non-mycorrhizal trees. This suggests that dual-mycorrhizal species may be able to hedge against environmental change by drawing on both AM and EcM traits.
+
+In ecological terms, they can leverage the benefits of multiple belowground strategies.
+
+![Figure 2](/images/projects/environmental-niches/figure_2.png)
+
+**Figure 2.** Dual-mycorrhizal trees occupied the broadest environmental niches across Australian forests. (**a**) Raw species-level niche breadth for each mycorrhizal type. (**b**) Mean phylogenetically adjusted differences among mycorrhizal types. Results are shown for all forests, tropical forests, and temperate forests. AM and EcM trees showed a clear climatic-zone reversal, with EcM trees having broader niches in tropical forests, while AM trees had broader niches in temperate forests. This suggests that niche breadth may expand when trees occur outside their core climatic zones.
+
+### Dual-mycorrhizal trees bridge AM- and EcM-dominated forest biomes
+
+Across Australia, AM trees were concentrated in warm, wet tropical forests, while EcM trees were more prominent in cooler temperate forests.
+
+Dual-mycorrhizal trees bridged these two worlds.
+
+They extended into mid-latitudes, linking AM-dominated tropical forests with EcM-dominated temperate forests (Figure 3). This makes them geographic intermediaries across one of the major latitudinal gradients in Australian forests.
+
+![Figure 3](/images/projects/environmental-niches/figure_3.png)
+
+**Figure 3.** AM, EcM, and dual-mycorrhizal trees occupy different parts of the Australian forest landscape. AM trees dominate warmer tropical forests, EcM trees become more prominent in cooler temperate forests, and dual-mycorrhizal trees bridge the gap between them. These maps, latitudinal trends, and environmental gradients show that mycorrhizal strategy is strongly structured in both geographic and environmental space. (**a**) Geographic distribution of predicted relative richness. (**b**) Latitudinal gradients in relative richness. (**c**) Environmental distribution of predicted relative richness. Relative richness represents the richness of a focal mycorrhizal type relative to the combined richness of all other types.
+
+### In environmental space, dual-mycorrhizal trees tracked EcM trees
+
+Geographically, dual-mycorrhizal trees acted as a bridge. Environmentally, they told a different story.
+
+Rather than occupying a neat middle ground between AM and EcM trees, dual-mycorrhizal species showed strong overlap with EcM trees in environmental space (Figure 4).
+
+This distinction matters. Dual-mycorrhizal trees may connect AM- and EcM-dominated forests geographically, but their environmental preferences are more EcM-like.
+
+![Figure 4](/images/projects/environmental-niches/figure_4.png)
+
+**Figure 4.** Dual-mycorrhizal trees were geographically intermediate but environmentally EcM-like. Niche overlap analyses showed that dual-mycorrhizal species shared more environmental space with EcM trees than with AM trees, suggesting that the two strategies occupy similar environmental conditions despite different geographic patterns. (**a**) Kernel density estimates show where species from each mycorrhizal type occur in environmental space. (**b**) Schoener's D quantifies niche overlap among mycorrhizal types, where 0 indicates no overlap and 1 indicates complete overlap.
+
+### Australian trees did not follow the classic Rapoport pattern
+
+In the Northern Hemisphere, tree species often show broader niches at higher latitudes. This pattern, known as the Rapoport effect, is usually linked to strong climatic filtering and repeated glaciation throughout the Quaternary.
+
+Australian forest trees showed a different pattern.
+
+Niche breadth peaked closer to the middle of the continent’s latitudinal domain rather than increasing steadily toward higher latitudes (Figure 5). This was broadly consistent with a **mid-domain effect**, where the shape and boundaries of the continent influence how species ranges stack up across latitude.
+
+EcM and dual-mycorrhizal trees partly diverged from this expected mid-domain pattern at higher latitudes, suggesting that geometry alone does not explain the full story.
+
+That matters because Australian tree niches may carry a distinct Southern Hemisphere signal — one shaped by continental geometry, long-term climatic stability, limited glaciation, and deep evolutionary persistence.
+
+![Figure 5](/images/projects/environmental-niches/figure_5.png)
+
+**Figure 5.** Australian forest trees did not follow the classic Northern Hemisphere Rapoport pattern. Instead of increasing steadily toward higher latitudes, environmental niche breadth peaked closer to the middle of Australia’s latitudinal domain. Mid-domain null models suggest that this pattern partly reflects the geometry of the continent. EcM and dual-mycorrhizal trees diverged from null expectations at higher latitudes, suggesting that Australia’s temperate flora may also carry the imprint of long-term climatic stability, limited glaciation, and deep evolutionary persistence.
+
+## Why it matters
+
+Mycorrhizal type is often treated as background information. This study shows it can be a first-order predictor of how trees occupy environmental space.
+
+Our findings have practical consequences. If tree–fungi strategies influence environmental tolerance, they can help improve vulnerability assessments, restoration planning, and predictions of how forests may respond to environmental change.
+
+In short, the hidden belowground fungal partnerships in forests help explain the visible patterns we see aboveground.
 
 ## Status
 
-Manuscript under review at *Ecology Letters* (2025)  
+Manuscript under review at *Ecology Letters* (2026)  
+
 Code and analysis pipeline: [github.com/LukeLikesDirt/MycorrhizaAusForests](https://github.com/LukeLikesDirt/MycorrhizaAusForests)
 
 ---
