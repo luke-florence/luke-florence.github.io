@@ -9,7 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
-import { renderTitle } from "@/utils/utils";
+import { renderTitle } from "@/utils/formatTitle";
 
 interface ProjectCardProps {
   href: string;

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getPosts, plainTitle, renderTitle } from "@/utils/utils";
+import { getPosts } from "@/utils/utils";
+import { plainTitle, renderTitle } from "@/utils/formatTitle";
 import {
   Meta,
   Schema,
