@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
+import { getPosts, plainTitle, renderTitle } from "@/utils/utils";
 import {
   Meta,
   Schema,
@@ -44,7 +44,7 @@ export async function generateMetadata({
   if (!post) return {};
 
   return Meta.generate({
-    title: post.metadata.title,
+    title: plainTitle(post.metadata.title),
     description: post.metadata.summary,
     baseURL: baseURL,
     image: post.metadata.image || "/images/og/home.jpg",
@@ -79,7 +79,7 @@ export default async function Project({
         as="blogPosting"
         baseURL={baseURL}
         path={`${work.path}/${post.slug}`}
-        title={post.metadata.title}
+        title={plainTitle(post.metadata.title)}
         description={post.metadata.summary}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
@@ -99,7 +99,7 @@ export default async function Project({
         <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
           {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
         </Text>
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        <Heading variant="display-strong-m" dangerouslySetInnerHTML={{ __html: renderTitle(post.metadata.title) }} />
       </Column>
       <Row marginBottom="32" horizontal="center">
         <Row gap="16" vertical="center">

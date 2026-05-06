@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { renderTitle } from "@/utils/utils";
 
 interface ProjectCardProps {
   href: string;
@@ -65,9 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         {title && (
           <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
+            <Heading as="h2" wrap="balance" variant="heading-strong-xl" dangerouslySetInnerHTML={{ __html: renderTitle(title) }} />
           </Flex>
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
